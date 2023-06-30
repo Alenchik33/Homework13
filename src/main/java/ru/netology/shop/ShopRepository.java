@@ -21,9 +21,9 @@ public class ShopRepository {
     }
 
     public void remove(int id) {
+        Product productForRemove = findById(id);
         if (findById(id) == null) {
-            throw new NotFoundException(
-                    "Element with id: " + id + " not found");
+            throw new NotFoundException(id);
         }
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;

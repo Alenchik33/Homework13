@@ -1,7 +1,7 @@
 package ru.netology.shop;
 
 public class NotFoundException extends RuntimeException {
-    public NotFoundException(String s) {
-        super(s);
+    public NotFoundException(int id) {
+        super("Товар с ID = " + id + " не найден ");
     }
 }

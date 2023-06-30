@@ -1,5 +1,7 @@
 package ru.netology.shop;
 
+import java.util.Objects;
+
 public class Product {
     protected int id;
     protected String title;
@@ -19,7 +21,30 @@ public class Product {
         return id == product.id && price == product.price && title.equals(product.title);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, price);
+    }
+
+
     public int getId() {
+
         return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle() {
+        this.title = title;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
