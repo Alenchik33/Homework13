@@ -13,9 +13,9 @@ public class ProductTest {
         repo.add(product2);
 
 
-        Assertions.assertThrows(NotFoundException.class, () -> {
-            repo.remove(3);
-        });
+        Assertions.assertThrows(NotFoundException.class, () ->
+            repo.remove(3)
+        );
     }
 
     @Test

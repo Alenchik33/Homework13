@@ -13,16 +13,18 @@ public class ShopRepository {
     }
 
     public void add(Product product) {
+
         products = addToArray(products, product);
     }
 
     public Product[] findAll() {
+
         return products;
     }
 
     public void remove(int id) {
         Product productForRemove = findById(id);
-        if (findById(id) == null) {
+        if (productForRemove == null) {
             throw new NotFoundException(id);
         }
         Product[] tmp = new Product[products.length - 1];
